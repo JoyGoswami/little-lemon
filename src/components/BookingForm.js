@@ -35,6 +35,7 @@ export default function BookingForm() {
   function handleSubmit(e) {
     e.preventDefault();
     console.log("hi");
+    // <Link to="/confirm"></Link>;
   }
   function onChangeListener(e) {
     setValues({ ...values, [e.target.name]: e.target.value });
@@ -50,6 +51,7 @@ export default function BookingForm() {
           name="date"
           value={values.date}
           onChange={onChangeListener}
+          required
         />
       </div>
       <div className="field">
@@ -59,6 +61,7 @@ export default function BookingForm() {
           name="time"
           onChange={onChangeListener}
           defaultValue={"DEFAULT"}
+          required
         >
           {/* <option disabled value="DEFAULT">
             Choose Time
@@ -74,7 +77,12 @@ export default function BookingForm() {
       </div>
       <div className="field">
         <label htmlFor="numOfGuest">Number of Guests</label>
-        <select id="numOfGuest" name="numOfGuest" onChange={onChangeListener}>
+        <select
+          id="numOfGuest"
+          name="numOfGuest"
+          onChange={onChangeListener}
+          required
+        >
           {/* <option disabled value="DEFAULT">
             Choose Time
           </option> */}
@@ -90,6 +98,7 @@ export default function BookingForm() {
       <div className="field">
         <label htmlFor="occasion">Occasion</label>
         <select
+          required
           id="occasion"
           name="occasion"
           onChange={onChangeListener}
@@ -102,9 +111,20 @@ export default function BookingForm() {
           <option value="anniversary">Anniversary</option>
         </select>
       </div>
+      <input
+        aria-label="On Click"
+        className="submit-btn"
+        type="submit"
+        value="Save"
+      />
 
       <Link to="/confirm">
-        <input className="submit-btn" type="submit" value="Reserve a Table" />
+        <input
+          aria-label="On Click"
+          className="submit-btn"
+          type="submit"
+          value="Reserve a Table"
+        />
       </Link>
     </form>
   );
