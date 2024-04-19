@@ -10,6 +10,8 @@ import Login from "./components/Login";
 import Menu from "./components/Menu";
 import OrderOnline from "./components/OrderOnline";
 import Reservations from "./components/Reservations";
+import BookingPage from "./components/BookingPage";
+import Confirm from "./components/Confirm";
 import { Route, Routes } from "react-router-dom";
 
 function App() {
@@ -27,6 +29,8 @@ function App() {
         <Route path="/order-online" element={<OrderOnline />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/about" element={<About />}></Route>
+        <Route path="/booking-page" element={<BookingPage />}></Route>
+        <Route path="/confirm" element={<Confirm />}></Route>
       </Routes>
     </>
   );

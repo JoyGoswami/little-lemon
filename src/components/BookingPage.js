@@ -2,7 +2,7 @@ import BookingForm from "./BookingForm";
 import Main from "./Main";
 import Footer from "./Footer";
 
-export default function Reservations() {
+export default function BookingPage() {
   return (
     <div>
       <div className="form-cont">

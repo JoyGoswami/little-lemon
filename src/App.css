@@ -27,21 +27,25 @@ header {
   margin: 0px auto;
 }
 .logo {
-  width: 20%;
+  /* width: 20%; */
 }
 nav {
 }
 .navbar {
   display: flex;
+  gap: 10px;
 }
 .navbar li {
-  margin: 0px 10px;
 }
 .nav-links {
   font-family: "Karla", sans-serif;
   font-size: 16px;
   font-weight: 800;
   color: rgb(36, 36, 36);
+}
+.ham-menu {
+  display: none;
+  cursor: pointer;
 }
 /* hero */
 .hero {
@@ -63,7 +67,8 @@ nav {
   font-family: "Karla", sans-serif;
   font-size: 18px;
   color: #edefee;
-  margin: 5px 0px;
+  margin: 15px 0px;
+  width: 70%;
 }
 .hero-btn,
 .main-btn {
@@ -76,14 +81,27 @@ nav {
   padding: 8px 15px;
   cursor: pointer;
 }
+.hero .container {
+  flex: 1;
+}
 .hero-content {
-  width: 35%;
+  /* width: 35%; */
+  flex: 1;
 }
 .hero-img {
-  width: 65%;
+  /* width: 65%; */
   position: relative;
+  flex: 1;
 }
-.img-cont {
+.hero-img img {
+  height: 285px;
+  width: 239px;
+  position: absolute;
+  top: -110px;
+  right: 0px;
+  border-radius: 8px;
+}
+/* .img-cont {
   height: 285px;
   width: 290px;
   position: absolute;
@@ -92,7 +110,7 @@ nav {
   top: -85px;
   right: 0px;
   border-radius: 8px;
-}
+} */
 /* main  */
 .main {
   margin-top: 100px;
@@ -116,12 +134,17 @@ nav {
   gap: 13px;
 }
 .card-img {
-  width: 261px;
-  height: 209px;
+  /* width: 257px; */
+  /* height: 209px; */
+  height: 237px;
+  flex: 1;
 
   /* background-size: cover; */
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
+}
+.card {
+  width: 256px;
 }
 .img-one {
   background: url(../src/assets/greek\ salad.jpg);
@@ -164,4 +187,156 @@ nav {
   height: 20px;
   width: 20px;
   margin-left: 10px;
+}
+/* form  */
+.form-cont {
+  width: 60%;
+  margin: 50px auto;
+}
+fieldset {
+  padding: 30px;
+}
+legend {
+  background-color: #887204;
+  color: white;
+  padding: 4px 15px;
+  border-radius: 16px;
+}
+.field {
+  width: 100%;
+  display: flex;
+}
+.field label {
+  align-self: self-end;
+}
+.field label,
+.field input,
+.field select {
+  margin: 10px 0px;
+  height: 50px;
+  font-size: 1.3rem;
+}
+.field label {
+  width: 30%;
+}
+.field input,
+.field select {
+  width: 70%;
+}
+.submit-btn {
+  width: 80%;
+  margin: 20px auto;
+  display: block;
+  padding: 20px;
+  background-color: #887204;
+  color: white;
+  border: none;
+  border-radius: 16px;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+.confirm {
+  width: 60%;
+  margin: 150px auto;
+  color: green;
+}
+.footer-cont {
+  width: 60%;
+  margin: 50px auto;
+  display: flex;
+}
+.footer-cont div {
+  flex: 1;
+}
+.footer-cont div ul li {
+  margin: 10px 0px;
+}
+.footer-cont div ul li:first-child {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+/* media quary */
+@media screen and (max-width: 1000px) {
+  .container,
+  .main-container {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 742px) {
+  .container,
+  .main-container {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 672px) {
+  header {
+    position: relative;
+  }
+  nav {
+    display: none;
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    top: 100%;
+    left: 0px;
+    z-index: 99;
+  }
+  .nav-display {
+    display: block;
+  }
+  .navbar {
+    display: block;
+    width: 100%;
+  }
+  .nav-links {
+    width: 100%;
+    display: block;
+    padding: 15px 26px;
+  }
+  .nav-links:hover {
+    background-color: rgb(201, 201, 201);
+  }
+  .ham-menu {
+    display: block;
+  }
+  .hero .container {
+    flex-direction: column-reverse;
+  }
+  .hero-content {
+    margin-top: 40px;
+    text-align: center;
+  }
+  .hero-content p {
+    width: 100%;
+    text-align: center;
+  }
+  .hero-img img {
+    position: relative;
+    top: 0px;
+  }
+  .main-card-container {
+    flex-direction: column;
+  }
+  .card {
+    width: 351px;
+    margin: 0 auto;
+  }
+  .main-header h2 {
+    font-size: 35px;
+  }
+  .main-btn {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 440px) {
+  .card {
+    width: 100%;
+  }
+  .main-header h2 {
+    font-size: 26px;
+  }
+  .main-btn {
+    font-size: 14px;
+  }
 }

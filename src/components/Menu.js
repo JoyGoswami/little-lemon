@@ -1,3 +1,11 @@
+import Main from "./Main";
+import Footer from "./Footer";
+
 export default function Menu() {
-  return <h1>Menu</h1>;
+  return (
+    <div>
+      <Main />
+      <Footer />
+    </div>
+  );
 }

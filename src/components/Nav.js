@@ -1,16 +1,24 @@
 import { Link } from "react-router-dom";
 import Logo from "../assets/Logo .svg";
+import hamBurger from "../assets/hamburger-menu.svg";
+import { useState } from "react";
 
 export default function Nav() {
+  const [expand, setExpand] = useState(false);
+
+  function toggleNavExpand() {
+    setExpand(!expand);
+  }
+
   return (
     <header className="">
       <div className="container">
         <div className="logo">
           <Link to="/">
-            <img src={Logo} />
+            <img src={Logo} alt="logo" />
           </Link>
         </div>
-        <nav>
+        <nav className={expand ? "nav-display" : ""}>
           <ul className="navbar">
             <li>
               <Link to="/" className="nav-links">
@@ -44,6 +52,9 @@ export default function Nav() {
             </li>
           </ul>
         </nav>
+        <div className="ham-menu" onClick={toggleNavExpand}>
+          <img src={hamBurger} />
+        </div>
       </div>
     </header>
   );
